@@ -1,0 +1,141 @@
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+  <nav class="text-white p-2 py-4  ">
+    <div class="container w-75 mt-3 d-flex">
+      <!-- <div class="icon">
+        <i class="fa-brands fa-facebook-f text-danger"></i>
+      </div> -->
+      <div class="d-flex ">
+        <img class="logo" src="img/logo.png" alt="">
+        <div class="ms-2">
+          <h1>Weather</h1>
+          <p>tagline goes here </p>
+        </div>
+      </div>
+
+      <ul class="list-unstyled d-flex  align-items-center   ms-auto ">
+
+        <li class="nav-item mx-3"><a href="notfound.html" class="nav-link active">Home <span class="rounded-5"></span></a></li>
+        <li class="nav-item mx-3 "><a href="notfound.html" class="nav-link ">News Live <span class="rounded-5"></span></a></li>
+        <li class="nav-item mx-3 "><a href="notfound.html" class="nav-link ">cameras <span class="rounded-5"></span></a></li>
+        <li class="nav-item mx-3 "><a href="notfound.html" class="nav-link ">Photos <span class="rounded-5"></span></a></li>
+        <li class="nav-item mx-3 "><a href="contact.html" class="nav-link ">Contact <span class="rounded-5"></span></a></li>
+      </ul>
+    </div>
+  </nav>
+  <section id="cityBg"></section>
+
+  <section class="position-absolute " id="mainSec">
+    <div class="container w-75">
+      <div class="position-relative">
+        <input id="mainInput" type="text" class="form-control rounded-5" placeholder="find your location..">
+        <button id="find" class="btn btn-info position-absolute top-0 end-0 bottom-0 m-1 px-5 rounded-5">Find</button>
+      </div>
+
+      <div class="row rounded-2 overflow-hidden " id="eleme">
+
+        <div class="col-md-4 dived text-white mt-5 pb-3 p-0">
+          <div class="d-flex divedTitle px-3  pt-1">
+            <p id="first-day" class="me-auto">friday</p>
+            <p id="first-date" class="ms-auto">4August</p>
+          </div>
+          <div class=" p-3">
+            <p id="first-location">cairo</p>
+            <div class="d-flex align-items-center">
+              <h2 id="first-degree" class="">29<sub>o</sub>C</h2>
+              <img id="first-img" class="mx-3" src="img/113.png" alt="">
+            </div>
+            <h6 id="first-status">clear</h6>
+          </div>
+          <div class="d-flex justify-content-around py-2">
+            <div class="d-flex">
+              <img class="sm-img" src="img/icon-umberella.png" alt="">
+              <p>20</p>
+            </div>
+            <div class="d-flex">
+              <img class="sm-img" src="img/icon-wind.png" alt="">
+              <p>18km</p>
+            </div>
+            <div class="d-flex">
+              <img class="sm-img" src="img/icon-compass.png" alt="">
+              <p>East</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 divedo text-white mt-5 pb-3 p-0">
+          <div class="d-flex px-2 py-2 ">
+            <p id="sec-day" class="m-auto">sunday</p>
+          </div>
+          <div class=" p-2 d-flex align-items-center flex-column justify-content-center  h-100">
+            <div class="d-flex align-items-center flex-column">
+              <img id="sec-img" class="m-auto" src="img/113.png" alt="">
+              <h5 id="sec-deg" class="">29*c</h5>
+              <h4 id="sec-deg-sm" class=" fa-sm text-secondary my-2 pb-1">29*c</h4>
+            </div>
+            <h6 id="sec-status">clear</h6>
+          </div>
+
+        </div>
+        <div class="col-md-4 dived text-white px-0 pb-3  m-0 mt-5">
+          <div class="d-flex divedTitle p-2 ">
+            <p id="thrd-day" class="m-auto">Monday</p>
+          </div>
+          <div class=" p-2 d-flex align-items-center flex-column justify-content-center  h-100">
+            <div class="d-flex align-items-center flex-column">
+              <img id="thrd-img" class="m-auto" src="img/113.png" alt="">
+              <h5 id="thrd-deg" class="">29*c</h5>
+              <h4 id="thrd-deg-sm" class=" fa-sm text-secondary my-2 pb-1">29*c</h4>
+            </div>
+            <h6 id="thrd-status">clear</h6>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="w-100 mt-5 py-5 foot   ">
+
+      <div class=" mt-5 container  w-75 row">
+        <div class="col-md-8">
+          <div class="position-relative">
+            <input type="text" class="form-control rounded-5" placeholder="Enter your email to subscribe..">
+            <button class="btn btn-info position-absolute top-0 end-0 bottom-0 m-1 px-md-5 rounded-5">Subscribe</button>
+          </div>
+          <p class="ms-5 mt-3 text-secondary">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+
+        </div>
+        <div class="d-flex col-md-4 justify-content-center">
+          <div class="ic rounded-circle">
+            <i class="fa-brands fa-facebook-f "></i>
+          </div>
+          <div class="ic rounded-circle">
+            <i class="fa-brands fa-twitter "></i>
+          </div>
+          <div class="ic rounded-circle">
+            <i class="fa-brands fa-instagram "></i>
+          </div>
+          <div class="ic rounded-circle">
+            <i class="fa-brands fa-github "></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
