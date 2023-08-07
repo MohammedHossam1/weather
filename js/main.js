@@ -9,29 +9,28 @@ mo.forEach(el => {
 
 // let data;
 
-let mainInput = document.querySelector('#mainInput')
-let firstDay = document.querySelector('#first-day')
-let firstDate = document.querySelector('#first-date')
-let firstLocation = document.querySelector('#first-location')
-let firstDegree = document.querySelector('#first-degree')
-let firstImg = document.querySelector('#first-img')
-let firstStatus = document.querySelector('#first-status')
-let secDay = document.querySelector('#sec-day')
-let secImg = document.querySelector('#sec-img')
-let secDeg = document.querySelector('#sec-deg')
-let secDegsm = document.querySelector('#sec-deg-sm')
-let secStatus = document.querySelector('#sec-status')
-let thrdDay = document.querySelector('#thrd-day')
-let thrdImg = document.querySelector('#thrd-img')
-let thrdDeg = document.querySelector('#thrd-deg')
-let thrdDegsm = document.querySelector('#thrd-deg-sm')
-let thrdStatus = document.querySelector('#thrd-status')
-async function getData(category) {
+const mainInput = document.querySelector('#mainInput')
+const firstDay = document.querySelector('#first-day')
+const firstDate = document.querySelector('#first-date')
+const firstLocation = document.querySelector('#first-location')
+const firstDegree = document.querySelector('#first-degree')
+const firstImg = document.querySelector('#first-img')
+const firstStatus = document.querySelector('#first-status')
+const secDay = document.querySelector('#sec-day')
+const secImg = document.querySelector('#sec-img')
+const secDeg = document.querySelector('#sec-deg')
+const secDegsm = document.querySelector('#sec-deg-sm')
+const secStatus = document.querySelector('#sec-status')
+const thrdDay = document.querySelector('#thrd-day')
+const thrdImg = document.querySelector('#thrd-img')
+const thrdDeg = document.querySelector('#thrd-deg')
+const thrdDegsm = document.querySelector('#thrd-deg-sm')
+const thrdStatus = document.querySelector('#thrd-status')
 
+async function getData(category) {
     let resp = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=7d77b96c972b4d119a3151101212704&q=${category}&days=7`)
     data = await resp.json()
     displayfootball(data)
-
 }
 
 function displayfootball(x) {
@@ -41,24 +40,29 @@ function displayfootball(x) {
 
 }
 
-//   var x = document.getElementById("demo");
-//   function getLocation() {
-//     if (navigator.geolocation) {
-//       navigator.geolocation.getCurrentPosition(showPosition);
-//     } else {
-//       x.innerHTML = "Geolocation is not supported by this browser.";
-//     }
-//   }
-  
-//   function showPosition(position) {
-//     x.innerHTML = "Latitude: " + position.coords.latitude +
-//     "<br>Longitude: " + position.coords.longitude;
-//   }
+let latitude;
+let longitude;
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        let backE =alert("Geolocation is not supported by this browser.") ;
+        return backE
+    }
+}
 
-//   getLocation()
+function showPosition(position) {
+    latitude =  position.coords.latitude
+    longitude =  position.coords.longitude;
+    console.log( latitude+longitude)
+getData(`${latitude+`,`+longitude}`)//location now
 
-getData('cairo')//location now
-function dayFirst(x){
+}
+
+getLocation()//location now
+// getData("48.864716,2.349014")//location now
+
+function dayFirst(x) {
     let date1 = new Date(x.forecast.forecastday[0].date)
     let weekDay1 = date1.toLocaleString('en-US', { weekday: "long" })
     let day1 = date1.toLocaleString('en-US', { day: "numeric" })
@@ -71,7 +75,7 @@ function dayFirst(x){
     firstStatus.innerHTML = x.current.condition.text//done
     firstDegree.innerHTML = `${x.current.temp_c}<sub>o</sub>C`//done
 }
-function daySec(x){
+function daySec(x) {
     let date2 = new Date(x.forecast.forecastday[1].date)
     let weekDay2 = date2.toLocaleString('en-US', { weekday: "long" })
     secStatus.innerHTML = x.forecast.forecastday[1].day.condition.text//done
@@ -80,7 +84,7 @@ function daySec(x){
     secImg.setAttribute('src', `https://${x.forecast.forecastday[1].day.condition.icon}`)//done
     secDay.innerHTML = weekDay2
 }
-function dayThird(x){
+function dayThird(x) {
     let date3 = new Date(x.forecast.forecastday[2].date)
     let weekDay3 = date3.toLocaleString('en-US', { weekday: "long" })
     thrdStatus.innerHTML = x.forecast.forecastday[2].day.condition.text//done
@@ -91,7 +95,7 @@ function dayThird(x){
 }
 mainInput.addEventListener('keyup', function () {
 
-    getData(mainInput.value)//location now
+    getData(mainInput.value)
 
 })
 
