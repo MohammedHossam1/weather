@@ -73,7 +73,7 @@ color: white !important;
     background-color: #262936;
 }
 
-.col-md-4 h2{
+.col-lg-4 h2{
     font-size: 80px;
 }
 
@@ -189,7 +189,7 @@ nav li{
     }
 }
 @media screen and (max-width:600px) {
-    .col-md-4 h2{
+    .col-lg-4 h2{
         font-size: 60px;
     }
 }
