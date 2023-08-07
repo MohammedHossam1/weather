@@ -33,12 +33,6 @@ async function getData(category) {
     displayfootball(data)
 }
 
-function displayfootball(x) {
-    dayFirst(x)
-    daySec(x)
-    dayThird(x)
-
-}
 
 let latitude;
 let longitude;
@@ -93,6 +87,13 @@ function dayThird(x) {
     thrdImg.setAttribute('src', `https://${x.forecast.forecastday[2].day.condition.icon}`)//done
     thrdDay.innerHTML = weekDay3
 }
+function displayfootball(x) {
+    dayFirst(x)
+    daySec(x)
+    dayThird(x)
+
+}
+
 mainInput.addEventListener('keyup', function () {
 
     getData(mainInput.value)
